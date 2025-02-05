@@ -1,20 +1,23 @@
 function firstWord(s) {
-  // your code here
-	let result = ""
-	if(s.length==0){
-		return s;
-	}
-		
-	for(let i =0; i<s.length;i++){
-		result+=s[i];
-		if(s[i]==" ")
-			break;
-	}
-	return result
-	
+    let result = "";
+    let started = false;
+
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] !== " ") {
+            result += s[i];
+            started = true;
+        } else if (started) {
+            break;
+        }
+    }
+
+    return result;
 }
 
-// Do not change the code below
+//
 
-const s = prompt("Enter String:");
+
+
+
+const s = prompt("Enter String:")
 alert(firstWord(s));
